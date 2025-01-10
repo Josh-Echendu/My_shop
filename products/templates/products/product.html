@@ -1,0 +1,69 @@
+{% extends 'products/_base.html' %}
+{% load static %}
+
+{% block description %}you can create an account on myshop store{% endblock %}
+<!--noindex, nofollow--> <!--if you do want search engines to consider your page when  they are looking at websites-->
+{% block robots %}index, follow{% endblock %} <!--if you want search engines to consider your page when  they are looking at websites-->
+{% block keywords %}signup, myshop{% endblock %}
+{% block title %}Signup{% endblock title %}
+{% block css %}{% static 'products/productz.css' %}{% endblock %}
+
+{% block content %}
+
+{% include 'includes/nav.html'%}
+
+<div id="product-main-con">zxse444                   
+    <main>
+        <img src="{{product.image.url}}">
+        <div>
+            <h1>{{product.title}}</h1>
+            <p>{{product.brand.title}}</p>
+            <p>{{product.description}}</p>
+            <button>Add Card</button>
+        </div>
+    </main>
+    <br>
+    <br>
+    <strong style='color:green' id="message"></strong>
+    <section id="feedback">
+        <h3>Customer's feedback:</h3>
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color:green">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+        
+        <form method="POST" action="{% url 'ajax_form' product.id %}" id="comment">
+            {% csrf_token %}
+            {% for field in reviewform %}
+                {{ field.label_tag }}
+                <p>{{ field }}</p>
+                {% if field.help_text %}
+                    <p>{{ field.help_text }}<br>
+                {% endif %}
+                {% for error in field.errors %}
+                    <p style="color: red;">{{ error }}</p>
+                {% endfor %}
+            {% endfor %}
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    
+    <div>
+        <p><i>Users feedback</i></p>
+        {% for review in reviews %}
+            <h4>{{ review.name }} - {{ review.rating }}
+                {% if review.rating == 5 %}⭐⭐⭐⭐⭐
+                {% elif review.rating == 4 %}⭐⭐⭐⭐
+                {% elif review.rating == 3 %}⭐⭐⭐
+                {% elif review.rating == 2 %}⭐⭐
+                {% else %}⭐
+                {% endif %}
+                <a href="">Update</a>
+            </h4>
+            <p>{{ review.text }}</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

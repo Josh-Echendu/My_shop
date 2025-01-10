@@ -1,0 +1,84 @@
+.body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.main-nav{ 
+    background-color: #f7f7f8;
+    padding: 10px;
+}
+header{
+    display: flex;
+}
+
+.main-nav a{ /* To differenciate the styling of this 'a' tag or any tag with other 'a' tags */
+
+    font-size: 20px;
+    color: #3c404A;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    transition-duration: 0.5s; /* this is connect to the .main-nav a:hover below for howmany seconds it should last*/
+
+}
+
+.main-nav a:hover{ /* this 'hover' is used to make effect on an object,for instance when the cursor hovers around an object or clicks it, and we changed the color to pink */
+    color: #fb6376;
+}
+#selected{
+    color:#5762D5;
+}
+.form{
+    width: 400px;
+    background-color: #EEEFF1;
+    border: solid 1px #3c404a2f;
+    border-radius: 15px;
+    color: #3d414a;
+    padding: 25px;
+    margin: 50px auto;   
+}
+.field{
+    width: 94%;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 15px;
+}
+
+.field:focus{ /* focus is used to make changes to an input in a form */
+    outline-style: solid; /* style the form in put, when it is focused and change the color of the outline*/
+    outline-width: 2px;
+    outline-color: #5762D5;
+}
+
+.form a{ /* To differenciate the styling of this 'a' tag with other a tags */
+    text-decoration: none;
+    color: #5762D5;
+}
+button{
+    width: 100%;
+    background-color: #5762D5;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    transition-duration: 0.5s;
+}
+button:hover{ /*style the sign up button in hover mode make it darker and show pointer */
+    background-color: #4751c0;
+    cursor: pointer; /*the is used to generate a click cursor symbol when hovering around the button */
+
+
+}
+
+/*When you try to center or move an object and it is not working just use:*/
+/*   margin: auto;
+    display: block;
+    and it would work
+    
+    for moving of text
+    text-align: center;
+    
+    for moving a grouping element like div or nav or select thier display is on block so we have to change it to either inline or inline-block */

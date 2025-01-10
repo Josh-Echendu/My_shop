@@ -1,0 +1,122 @@
+header{
+    margin-bottom: 35px;
+    display: flex;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: white;
+    justify-content: space-between;
+    box-shadow: 0px 10px 5px #00000043;
+    height: 70px;
+}
+
+header img{padding-top: 12px;}
+
+/* --------------------- navigation bar style ----------------------------*/
+.main-nav{
+    padding: 10px;
+    display: flex;
+    column-gap: 40px;
+    padding-top: 18px;
+}
+
+.main-nav a{ /* To differenciate the styling of this 'a' tag or any tag with other 'a' tags */
+
+    font-size: 20px;
+    color: #3c404A;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    transition-duration: 0.5s; /* this is connect to the .main-nav a:hover below for howmany seconds it should last*/
+    padding-top: 5px;
+}
+
+.main-nav a:hover{ /* this 'hover' is used to make effect on an object,for instance when the cursor hovers around an object or clicks it, and we changed the color to pink */
+    color: #fb6376;
+}
+
+#selected{
+    color:#5762D5;
+}
+
+header svg:hover{cursor: pointer; }
+#moon-icon{display: none; transform: translateY(-5px);} /*To raise the moon-icon a little bit higher*/
+#sun-icon{ transform: translateY(-5px);} /*To raise the sun-icon a little bit higher*/
+
+
+
+#product-main-con{
+    width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#product-main-con main{
+    display: flex;
+    width: 100%;
+    column-gap: 40px;
+}
+
+#product-main-con main button{
+    background-color: #5762D5;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;;
+    transition-duration: 0.5s
+
+}
+#product-main-con main button:hover{
+    background-color: #3d47b0;
+}
+#feedback{
+    padding: 30px;
+    background-color: #E9E6F0;
+    border-radius: 20px;
+    margin-top: 70px;
+}
+
+
+/*-------------------------Djangoform styling-------------------------*/
+
+#feedback input, #feedback textarea{
+    width: 97%;
+    display: block;
+    font-size: 18px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 15px;
+}
+
+#feedback label{
+    font-weight: 300px;
+    display: block;
+    margin-bottom: 2px;
+}
+
+#feedback button{
+    border: none;
+    border-radius: 15px;
+    background-color: #5762D5;
+    color: white;
+    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 20%;
+    transition-duration: 0.5s;
+}
+
+#feedback button:hover{
+    background-color: #3d47b0;
+    cursor: pointer;
+}

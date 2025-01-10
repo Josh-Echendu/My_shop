@@ -1,0 +1,50 @@
+{% extends 'products/_base.html' %}
+{% load static %}
+
+{% block description %}you can create an account on myshop store{% endblock %}
+<!--noindex, nofollow--> <!--if you do want search engines to consider your page when  they are looking at websites-->
+{% block robots %}index, follow{% endblock %} <!--if you want search engines to consider your page when  they are looking at websites-->
+{% block keywords %}signup, myshop{% endblock %}
+{% block title %}Signup{% endblock title %}
+{% block css %}{% static 'products/signup2.css' %}{% endblock %}
+
+{% block content %}
+{% include 'includes/nav.html' %} 
+
+{% if form.errors %}
+<p>You have entered an incorrect username or password.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <h1>Please login to view that page</h1>
+    {% else %}
+    <h1>Please login:</h1>
+    {% endif %}
+{% endif %}
+
+
+<form class="form" action="{% url 'sign-up' %}" method="POST">
+    {% csrf_token %}
+    <label for="name">User name:</label><br>
+    <input class="field" type="text" id="name" name="username" required><br>
+
+    <!--T0 know which label is for which input, is by using id and for attributes -->
+    <label for="email">Email:</label><br>
+    <input class="field" type="email" id="email" name="email" required><br><!--'required' is used for reminding users that they havent filled in a particular part or input of the form -->  
+    
+    <label for="password">Password:</label><br>
+    <input class="field" type="password" id="password" name="password1" required><br>
+
+    <label for="password">Confirm Password:</label><br>
+    <input class="field" type="password" id="password" name='password2' required><br>
+
+    <input type="checkbox" id="terms" name="terms_accepted"><label for="terms">I agree to the <a href="">terms of use</a></label>
+
+    <br><br>
+    <button type="submit">Signup</button>
+    <a href="{% url 'login' %}">Have an account? Login here</a>
+    <input type="submit" value={{next}}>
+
+</form>
+{% endblock content %}

@@ -1,0 +1,23 @@
+
+<html>
+    {% if forms.errors %}
+    <p>You have enterd an in correct username or password</p>
+    {% endif %}
+
+    {% if next %}
+    {% if user.is_authenticated %}
+    <h1>Please login to view that page</h1>
+    {% else %}
+    <h1>Please Login: </h1>
+    {% endif %}
+    {% endif %}
+
+
+    <form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Login">
+    <input type="hidden" name="next" value={{next}}>
+    </form>
+</html>
+

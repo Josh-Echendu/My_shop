@@ -1,0 +1,21 @@
+{% for product in products %}
+<div class="product-card josh">
+    <div class="review-con">
+        <p>Reviews 4.8</p>
+    </div>
+    <!-- we are reffering to the address of the location of the image file  -->
+    <img src='{{ product.image.url }}' class="product-image"
+    onmouseover="showReview()" onmouseout="hideReview()" alt="product_image">
+    <div class="product-cardB">
+        <h3>{{ product.title }}</h3>
+        <h3>{{product.description}}</h3>
+        <p>{{ product.brand_id.title }}</p>
+        {% if product.brand_id %}
+            <img width='100px' src="{{ product.brand_id.logo.url }}">
+            <p>{{ product.brand_id.address_id.city }}</p>
+        {% endif %}
+            <a href="{% url 'product-detail' product.brand_id.title product.slug %}">View product</a>
+
+    </div>
+</div>
+{% endfor %}
